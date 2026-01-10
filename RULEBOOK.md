@@ -292,9 +292,5 @@ Every repo must contain:
 ---
 ### 🔗 Navigation
 - [🧱 Superstack Architecture Rulebook (README)](README.md)
-- [📘 RULEBOOK.md](RULEBOOK.md)
-- [🧩 PODMAN-COMPOSE_REF.md](PODMAN-COMPOSE_REF.md)
-- [❤️ HEALTHCHECK.md](HEALTHCHECK.md)
-- [⚙️ CC-OAS.md](CC-OAS.md)
-- [🧠 LINKEDIN.md](LINKEDIN.md)
+
 
