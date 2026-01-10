@@ -33,8 +33,11 @@ It reflects how senior engineers actually ship and operate systems, not how plat
 ## What This Is Not
 
 ❌ A tutorial
+
 ❌ A “10x dev” productivity hack
+
 ❌ A replacement for thinking
+
 ❌ A proprietary platform
 
 This assumes you are comfortable with:
