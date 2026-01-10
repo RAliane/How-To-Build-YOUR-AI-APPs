@@ -289,4 +289,10 @@ Every repo must contain:
 **Databases exist to hold state.**
 **Abstractions exist to be earned — not assumed.**
 ---
-## 🧩 [PODMAN-COMPOSE_REF.md](PODMAN-COMPOSE_REF.md)
+### **🔗 Back to Overview**
+- [🧱 Superstack Architecture Rulebook (README)](README.md)
+- [📘 RULEBOOK.md](RULEBOOK.md)
+- [🧩 PODMAN-COMPOSE_REF.md](PODMAN-COMPOSE_REF.md)
+- [❤️ HEALTHCHECK.md](HEALTHCHECK.md)
+- [⚙️ CC-OAS.md](CC-OAS.md)
+- [🧠 LINKEDIN.md](LINKEDIN.md)
