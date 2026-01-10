@@ -11,11 +11,11 @@ Goal: Define a deterministic, open alternative to Convex-style platforms
 1. Problem Statement
 
 Modern “backend platforms” (Convex, Firebase, Supabase-style abstractions):
-	-Hide databases behind proprietary APIs
-	-Centralize logic in opaque runtimes
-	-Trade determinism for developer convenience
-	-Collapse trust boundaries
-	-Become impossible to reason about at scale
+-Hide databases behind proprietary APIs
+-Centralize logic in opaque runtimes
+-Trade determinism for developer convenience
+-Collapse trust boundaries
+-Become impossible to reason about at scale
 
 CC-OAS defines a system that delivers:
 	-Convex-level developer velocity
