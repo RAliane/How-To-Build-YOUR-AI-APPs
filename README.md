@@ -59,92 +59,40 @@ This assumes you are comfortable with:
 ---
 
 ## Repository Structure
+
 ```
 ├── README.md                  # This file
 ├── RULEBOOK.md                # Non-negotiable architectural rules
 ├── PODMAN-COMPOSE_REF.md      # Production Podman Compose reference
 ├── HEALTHCHECK.md             # Healthcheck & postmortem standards
 ├── CC-OAS.md                  # Convex-Class Open Architecture Spec
-└── LinkedIn.md                # Public-facing narrative & positioning
+└── LINKEDIN.md                # Public-facing narrative & LinkedIn posting strategy
 ```
-
-Each file is self-contained, explicit, and written to be read independently.
 
 ---
 
 ## File Overview
 
-### 📘 RULEBOOK.md
-
+### 📘 [RULEBOOK.md](RULEBOOK.md)
 The operating doctrine.
-
-Defines:
-- Network isolation rules
-- Security boundaries
-- Data ownership principles
-- Tooling constraints
-- What is allowed vs forbidden
-
+Defines network isolation, security boundaries, data ownership, and tooling constraints.
 **If you only read one file — read this.**
 
----
-
-### 🧩 PODMAN-COMPOSE_REF.md
-
+### 🧩 [PODMAN-COMPOSE_REF.md](PODMAN-COMPOSE_REF.md)
 A production-first Podman Compose reference implementing the rulebook.
+Includes triple network isolation, secrets handling, and deterministic container usage.
 
-Includes:
-- Triple network isolation
-- Service placement
-- Secrets handling
-- Healthchecks
-- Deterministic container usage
+### ❤️ [HEALTHCHECK.md](HEALTHCHECK.md)
+Standards for liveness/readiness checks, dependency awareness, and blameless postmortems.
 
-This is how the rules turn into infrastructure.
-
----
-
-### ❤️ HEALTHCHECK.md
-
-Standards for:
-- Liveness checks
-- Readiness checks
-- Dependency awareness
-- Blameless postmortems
-- Incident severity classification
-
-This file exists because most outages are operational, not technical.
-
----
-
-### ⚙️ CC-OAS.md
-
+### ⚙️ [CC-OAS.md](CC-OAS.md)
 **Convex-Class Open Architecture Specification**
+A formal spec for achieving Convex-level DX without proprietary runtimes.
 
-A formal architecture spec describing:
-- How to achieve Convex-level DX
-- Without proprietary runtimes
-- Without opaque data ownership
-- With explicit systems boundaries
-
-Written like an internal RFC, not marketing copy.
-
----
-
-### 🧠 LinkedIn.md
-
-A concise public narrative explaining:
-- Why this architecture exists
-- What problem it solves
-- How to talk about it without sounding insane online
-
-Optional — but useful.
-Here’s a concise, human-friendly addition for your README:
-
-**Note on `LinkedIn_Posting_RuleBook_v3.1.md`**
-This file outlines my LinkedIn posting strategy, but it’s formatted for machine readability (e.g., CI/CD, automation, or AI agents).
+### 🧠 [LINKEDIN.md](LINKEDIN.md)
+**Note:** This file outlines my LinkedIn posting strategy, but is formatted for machine readability (e.g., CI/CD, automation, or AI agents).
 It may look dense or cryptic—this is intentional. The structure and syntax are optimized for parsing, not human consumption.
-If you’re curious about the approach, focus on the **00-Philosophy** and **01-Principles** sections for the core ideas.
+For the core ideas, focus on the **00-Philosophy** and **01-Principles** sections.
 
 ---
 
