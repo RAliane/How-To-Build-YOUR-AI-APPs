@@ -2,7 +2,7 @@
 
 Liveness • Readiness • Dependency Awareness
 
-⸻
+---
 
 1. Healthcheck Design Rules (Read This Once)
 
@@ -18,7 +18,7 @@ Healthchecks must:
 	•	Never mutate state
 	•	Never depend on edge traffic
 
-⸻
+---
 
 2. Standard Healthcheck Response Schema
 ```json
@@ -38,7 +38,7 @@ When unhealthy:
 }
 ```
 
-⸻
+---
 
 3. Rust (Axum / Actix) Healthcheck Template
 
@@ -74,7 +74,7 @@ async fn ready() -> Result<Json<serde_json::Value>, axum::http::StatusCode> {
 📌 Liveness never fails unless the process is dead
 📌 Readiness checks DB connectivity only
 
-⸻
+---
 
 4. FastAPI Healthcheck Template
 ```
@@ -102,7 +102,7 @@ def ready():
     return {"status": "ok"}
 ```
 
-⸻
+---
 
 5. Postgres Healthcheck (Container-Level)
 ```
@@ -114,7 +114,7 @@ healthcheck:
 ```
 No SQL. No writes. Just readiness.
 
-⸻
+---
 
 6. Redis Healthcheck
 ```
@@ -123,7 +123,7 @@ healthcheck:
   interval: 30s
 ```
 
-⸻
+---
 
 7. MinIO Healthcheck
 ```
@@ -132,7 +132,7 @@ healthcheck:
   interval: 30s
 ```
 
-⸻
+---
 
 8. Nginx Healthcheck
 ```
@@ -141,13 +141,13 @@ healthcheck:
   interval: 30s
 ```
 
-⸻
+---
 
 🧾 Postmortem Template
 
 Blameless • Actionable • Deterministic
 
-⸻
+---
 
 1. Postmortem Rules
 	•	No blame
@@ -157,7 +157,7 @@ Blameless • Actionable • Deterministic
 	•	Facts only
 	•	Every incident ends with concrete actions
 
-⸻
+---
 
 2. File Name Convention
 ```
@@ -165,7 +165,7 @@ postmortems/
   2026-01-10-api-outage.md
 ```
 
-⸻
+---
 
 3. Postmortem Template (Markdown)
 ```
@@ -262,7 +262,7 @@ Service was restored at <time>.
 - DB pressure must be observable
 ```
 
-⸻
+---
 
 4. Severity Definitions (Standardized)
 ```
@@ -273,13 +273,13 @@ SEV-3	Degraded performance
 SEV-4	Minor issue
 ```
 
-⸻
+---
 
 5. Golden Rule (Again)
 
 If an incident did not produce action items, the postmortem is invalid.
 
-⸻
+---
 Here’s your polished and consistently formatted **Healthcheck Templates** markdown file, with improved readability, structure, and clarity:
 
 ```markdown
