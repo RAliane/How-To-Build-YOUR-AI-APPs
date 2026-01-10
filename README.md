@@ -139,6 +139,12 @@ A concise public narrative explaining:
 - How to talk about it without sounding insane online
 
 Optional — but useful.
+Here’s a concise, human-friendly addition for your README:
+
+**Note on `LinkedIn_Posting_RuleBook_v3.1.md`**
+This file outlines my LinkedIn posting strategy, but it’s formatted for machine readability (e.g., CI/CD, automation, or AI agents).
+It may look dense or cryptic—this is intentional. The structure and syntax are optimized for parsing, not human consumption.
+If you’re curious about the approach, focus on the **00-Philosophy** and **01-Principles** sections for the core ideas.
 
 ---
 
