@@ -1,46 +1,49 @@
+# 🧱 SUPERSTACK — Podman Compose Reference
 
-🧱 SUPERSTACK — Podman Compose Reference
+**Zero-Trust • Triple Network • Deterministic**
 
-Zero-Trust • Triple Network • Deterministic
+---
 
-⸻
+## 1. Networks *(Defined First, Always)*
 
-1. Networks (Defined First, Always)
-
+```yaml
 networks:
   edge-net:
     driver: bridge
-
   auth-net:
     driver: bridge
     internal: true
-
   db-net:
     driver: bridge
     internal: true
+```
 
-Rules enforced
-	•	internal: true blocks external routing
-	•	DB never exposed
-	•	Edge can only see edge
-	•	Auth is the only bridge
+**Rules Enforced:**
+- `internal: true` blocks external routing
+- DB never exposed
+- Edge can only see edge
+- Auth is the only bridge
 
-⸻
+---
 
-2. Volumes (Explicit, Named, Deterministic)
+## 2. Volumes *(Explicit, Named, Deterministic)*
 
+```yaml
 volumes:
   pgdata:
   minio-data:
   redis-data:
   vault-data:
+  ollama-data:
+```
 
-No anonymous volumes. Ever.
+> **No anonymous volumes. Ever.**
 
-⸻
+---
 
-3. Reverse Proxy (Nginx – Edge Only)
+## 3. Reverse Proxy *(Nginx – Edge Only)*
 
+```yaml
 services:
   nginx:
     image: nginx:alpine
@@ -63,16 +66,18 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+```
 
-✅ TLS
-✅ Rate limiting
-✅ Load balancing
-❌ No DB access
+✅ **TLS**
+✅ **Rate limiting**
+✅ **Load balancing**
+❌ **No DB access**
 
-⸻
+---
 
-4. Directus (Auth-Net Only)
+## 4. Directus *(Auth-Net Only)*
 
+```yaml
   directus:
     image: directus/directus:latest
     container_name: directus
@@ -91,14 +96,16 @@ services:
     healthcheck:
       test: ["CMD", "wget", "--spider", "http://localhost:8055/server/health"]
       interval: 30s
+```
 
-📌 CRUD, flows, admin
-📌 Never exposed directly
+📌 **CRUD, flows, admin**
+📌 **Never exposed directly**
 
-⸻
+---
 
-5. Hasura (Auth-Net Only)
+## 5. Hasura *(Auth-Net Only)*
 
+```yaml
   hasura:
     image: hasura/graphql-engine:latest
     container_name: hasura
@@ -113,15 +120,17 @@ services:
       - hasura_admin_secret
     depends_on:
       - postgres
+```
 
-📌 High-throughput GraphQL
-📌 No ORM nonsense
-📌 SQL remains king
+📌 **High-throughput GraphQL**
+📌 **No ORM nonsense**
+📌 **SQL remains king**
 
-⸻
+---
 
-6. Postgres (DB-Net Only)
+## 6. Postgres *(DB-Net Only)*
 
+```yaml
   postgres:
     image: postgres:16-alpine
     container_name: postgres
@@ -139,16 +148,18 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U app"]
       interval: 30s
+```
 
-Extensions installed in init scripts:
-	•	pgvector
-	•	pg_edge_vectorizer
-	•	postgis (only when needed)
+**Extensions installed in init scripts:**
+- pgvector
+- pg_edge_vectorizer
+- postgis *(only when needed)*
 
-⸻
+---
 
-7. Redis (Optional, DB-Net Only)
+## 7. Redis *(Optional, DB-Net Only)*
 
+```yaml
   redis:
     image: redis:alpine
     container_name: redis
@@ -158,14 +169,16 @@ Extensions installed in init scripts:
     volumes:
       - redis-data:/data
     command: ["redis-server", "--appendonly", "yes"]
+```
 
-📌 Cache / ephemeral state
-📌 Not your DB
+📌 **Cache / ephemeral state**
+📌 **Not your DB**
 
-⸻
+---
 
-8. MinIO (Object Storage, DB-Net Only)
+## 8. MinIO *(Object Storage, DB-Net Only)*
 
+```yaml
   minio:
     image: minio/minio
     container_name: minio
@@ -178,15 +191,17 @@ Extensions installed in init scripts:
     secrets:
       - minio_root_user
       - minio_root_password
+```
 
-📌 Static assets
-📌 Cold storage
-📌 Not a database
+📌 **Static assets**
+📌 **Cold storage**
+📌 **Not a database**
 
-⸻
+---
 
-9. Rust Services (Auth-Net Only)
+## 9. Rust Services *(Auth-Net Only)*
 
+```yaml
   rust-api:
     build:
       context: ./services/rust-api
@@ -200,15 +215,17 @@ Extensions installed in init scripts:
       RUST_LOG: info
     depends_on:
       - postgres
+```
 
-📌 Async orchestration
-📌 MCP / MoE routing
-📌 Deterministic binaries
+📌 **Async orchestration**
+📌 **MCP / MoE routing**
+📌 **Deterministic binaries**
 
-⸻
+---
 
-10. Python FastAPI (Only If Required)
+## 10. Python FastAPI *(Only If Required)*
 
+```yaml
   fastapi:
     build:
       context: ./services/fastapi
@@ -218,14 +235,16 @@ Extensions installed in init scripts:
     networks:
       - auth-net
       - db-net
+```
 
-⚠ Uses uv, not pip
-⚠ Only when Rust isn’t suitable
+⚠ **Uses uv, not pip**
+⚠ **Only when Rust isn’t suitable**
 
-⸻
+---
 
-11. Vault (Secrets Backbone)
+## 11. Vault *(Secrets Backbone)*
 
+```yaml
   vault:
     image: hashicorp/vault
     container_name: vault
@@ -234,15 +253,17 @@ Extensions installed in init scripts:
       - auth-net
     volumes:
       - vault-data:/vault/data
+```
 
-📌 Central secrets
-📌 Rotation capable
-📌 No plaintext envs
+📌 **Central secrets**
+📌 **Rotation capable**
+📌 **No plaintext envs**
 
-⸻
+---
 
-12. Ollama (Local AI)
+## 12. Ollama *(Local AI)*
 
+```yaml
   ollama:
     image: ollama/ollama
     container_name: ollama
@@ -251,15 +272,17 @@ Extensions installed in init scripts:
       - auth-net
     volumes:
       - ollama-data:/root/.ollama
+```
 
-📌 Local embeddings
-📌 API cost control
-📌 RAG foundation
+📌 **Local embeddings**
+📌 **API cost control**
+📌 **RAG foundation**
 
-⸻
+---
 
-13. Secrets (Never Inline)
+## 13. Secrets *(Never Inline)*
 
+```yaml
 secrets:
   db_password:
     file: ./secrets/db_password.txt
@@ -269,12 +292,13 @@ secrets:
     file: ./secrets/minio_user.txt
   minio_root_password:
     file: ./secrets/minio_password.txt
+```
 
+---
 
-⸻
+## 14. Final Mental Model
 
-14. Final Mental Model
-
+```
 [ Internet ]
      ↓
   edge-net
@@ -288,13 +312,14 @@ secrets:
   db-net
      ↓
  Postgres / Redis / MinIO
+```
 
-No shortcuts.
-No hope-based routing.
-No “just for now” ports.
+> **No shortcuts.**
+> **No hope-based routing.**
+> **No “just for now” ports.**
 
-⸻
+---
 
-15. Golden Rule
+## 15. Golden Rule
 
-If a service does not need to talk to another service, they do not share a network.
+> If a service does not need to talk to another service, they do **not** share a network.
