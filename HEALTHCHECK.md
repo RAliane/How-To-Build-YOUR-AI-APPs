@@ -11,9 +11,13 @@
 
 **Healthchecks must:**
 ✅ Return **200** (healthy) or **503** (unhealthy) only
+
 ✅ Be **cheap** (low resource usage)
+
 ✅ Have **no side effects**
+
 ✅ **Never** mutate state
+
 ✅ **Never** depend on edge traffic
 
 ---
