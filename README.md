@@ -60,10 +60,15 @@ Repository Structure
 
 .
 ├── README.md                  # This file
-├── RULEBOOK.md                # Non-negotiable architectural rules
-├── PODMAN-COMPOSE_REF.md      # Production Podman Compose reference
-├── HEALTHCHECK.md             # Healthcheck & postmortem standards
-├── CC-OAS.md                  # Convex-Class Open Architecture Spec
+
+	├── RULEBOOK.md                # Non-negotiable architectural rules
+
+		├── PODMAN-COMPOSE_REF.md      # Production Podman Compose reference
+
+			├── HEALTHCHECK.md             # Healthcheck & postmortem standards
+
+				├── CC-OAS.md                  # Convex-Class Open Architecture Spec
+
 └── LinkedIn.md                # Public-facing narrative & positioning
 
 Each file is self-contained, explicit, and written to be read independently.
