@@ -288,11 +288,3 @@ Every repo must contain:
 **Cargo and UV exist to protect you from yourself.**
 **Databases exist to hold state.**
 **Abstractions exist to be earned — not assumed.**
----
-### **🔗 Back to Overview**
-- [🧱 Superstack Architecture Rulebook (README)](README.md)
-- [📘 RULEBOOK.md](RULEBOOK.md)
-- [🧩 PODMAN-COMPOSE_REF.md](PODMAN-COMPOSE_REF.md)
-- [❤️ HEALTHCHECK.md](HEALTHCHECK.md)
-- [⚙️ CC-OAS.md](CC-OAS.md)
-- [🧠 LINKEDIN.md](LINKEDIN.md)
