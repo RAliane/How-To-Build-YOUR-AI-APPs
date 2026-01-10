@@ -291,12 +291,12 @@ Every repo must contain:
 
 ---
 ### 🔗 Navigation
-- [🧱 Superstack Architecture Rulebook (README)](../README.md)
-- [📘 RULEBOOK.md](../RULEBOOK.md)
-- [🧩 PODMAN-COMPOSE_REF.md](../PODMAN-COMPOSE_REF.md)
-- [❤️ HEALTHCHECK.md](HEALTHCHECK.md)
-- [⚙️ CC-OAS.md](../CC-OAS.md)
-- [🧠 LINKEDIN.md](../LINKEDIN.md)
+- [🧱 Superstack Architecture Rulebook (README)](https://github.com/RAliane/How-To-Build-YOUR-AI-APPs/edit/main/README.md)
+- [📘 RULEBOOK.md](https://github.com/RAliane/How-To-Build-YOUR-AI-APPs/blob/main/RULEBOOK.md)
+- [🧩 PODMAN-COMPOSE_REF.md](https://github.com/RAliane/How-To-Build-YOUR-AI-APPs/edit/main/PODMAN-COMPOSE_REF.md)
+- [❤️ HEALTHCHECK.md](https://github.com/RAliane/How-To-Build-YOUR-AI-APPs/edit/main/HEALTHCHECK.md)
+- [⚙️ CC-OAS.md](https://github.com/RAliane/How-To-Build-YOUR-AI-APPs/edit/main/CC-OAS.md)
+- [🧠 LINKEDIN.md](https://github.com/RAliane/How-To-Build-YOUR-AI-APPs/edit/main/LINKEDIN.md)
 
 
 
