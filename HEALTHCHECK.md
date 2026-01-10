@@ -10,6 +10,7 @@
 - `/health/deps` → Can reach required dependencies
 
 **Healthchecks must:**
+
 ✅ Return **200** (healthy) or **503** (unhealthy) only
 
 ✅ Be **cheap** (low resource usage)
