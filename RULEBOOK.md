@@ -288,3 +288,5 @@ Every repo must contain:
 **Cargo and UV exist to protect you from yourself.**
 **Databases exist to hold state.**
 **Abstractions exist to be earned — not assumed.**
+---
+## 🧩 [PODMAN-COMPOSE_REF.md](PODMAN-COMPOSE_REF.md)
