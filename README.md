@@ -81,7 +81,7 @@ The operating doctrine.
 Defines network isolation, security boundaries, data ownership, and tooling constraints.
 **If you only read one file — read this.**
 
-### 🧩 [PODMAN-COMPOSE_REF.md](PODMAN-COMPOSE_REF.md)
+### 🧩 [PODMAN-COMPOSE_REF.md](PODMAN-COMPOPODMAN-CONPOSE_REF.md)
 A production-first Podman Compose reference implementing the rulebook.
 Includes triple network isolation, secrets handling, and deterministic container usage.
 
