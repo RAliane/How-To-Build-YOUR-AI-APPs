@@ -135,3 +135,5 @@ This repository exists to make systems legible, auditable, and operable from day
 ---
 # Future Work
 As I delve into DevSecOps and auto scaling with Kubernetes, I'll be implementing best practices for contraindriez applications, security configs, and other features which I still don't know about. please be patient with me. I am still learning as well at 23 years of age. Everything I learned so far is through trial and error.
+
+Actively working on a Getting Started section as well to help others get started when working with the rulebook. The idea is that if you can replicate what I'm doing, you can enjoy my work and have a baseline idea of what my perception of industry best practices are. I will be using Amazon Elastic Container Services for the demo.
