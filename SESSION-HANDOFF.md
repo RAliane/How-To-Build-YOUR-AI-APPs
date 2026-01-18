@@ -1,6 +1,4 @@
-Here's your **SESSION-HANDOFF.md** file, designed for deterministic context transfer between LLM sessions or multi-agent workflows:
 
-```markdown
 # SESSION-HANDOFF.md
 
 **Purpose:**
