@@ -7,9 +7,13 @@ Ensure deterministic context transfer between LLMs or multi-session workflows. T
 
 ## 1. Current Context
 **Session ID:** [auto-generated or manual ID]
+
 **Start Time:** [ISO 8601 timestamp]
+
 **Agent/Actor:** [current agent/human identifier]
+
 **Active Scope:** [brief description of session's focus]
+
 **Decisions Made:**
 - [ ] Decision 1 with reference to context
 - [ ] Decision 2 with reference to context
